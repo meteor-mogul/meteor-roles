@@ -1,8 +1,8 @@
 Package.describe({
   summary: "Authorization package for Meteor",
-  version: "1.2.16",
-  git: "https://github.com/alanning/meteor-roles.git",
-  name: "alanning:roles"
+  version: "0.0.1",
+  git: "https://github.com/meteor-mogul/meteor-roles.git",
+  name: "meteormogul:accounts-roles"
 });
 
 Package.onUse(function (api) {
@@ -15,8 +15,6 @@ Package.onUse(function (api) {
            'tracker',
            'mongo',
            'check'], both);
-
-  api.use(['blaze'], 'client', {weak: true});
 
   api.export('Roles');
 
@@ -34,7 +32,7 @@ Package.onTest(function (api) {
 
   // `accounts-password` is included so `Meteor.users` exists
 
-  api.use(['alanning:roles',
+  api.use(['meteormogul:accounts-roles',
            'accounts-password',
            'underscore',
            'tinytest'], both);

@@ -16,7 +16,7 @@
 //
 // Use a semi-private variable rather than declaring UI
 // helpers directly so that we can unit test the helpers.
-// XXX For some reason, the UI helpers are not registered 
+// XXX For some reason, the UI helpers are not registered
 // before the tests run.
 //
 Roles._uiHelpers = {
@@ -40,33 +40,33 @@ Roles._uiHelpers = {
    * @param {String} [group] Optional, name of group to check
    * @return {Boolean} true if current user is in at least one of the target roles
    * @static
-   * @for UIHelpers 
+   * @for UIHelpers
    */
   isInRole: function (role, group) {
     var user = Meteor.user(),
         comma = (role || '').indexOf(','),
-        roles
+        roles;
 
-    if (!user) return false
-    if (!Match.test(role, String)) return false
+    if (!user) return false;
+    if (!Match.test(role, String)) return false;
 
     if (comma !== -1) {
       roles = _.reduce(role.split(','), function (memo, r) {
         if (!r || !r.trim()) {
-          return memo
+          return memo;
         }
-        memo.push(r.trim())
-        return memo
-      }, [])
+        memo.push(r.trim());
+        return memo;
+      }, []);
     } else {
-      roles = [role]
+      roles = [role];
     }
 
     if (Match.test(group, String)) {
-      return Roles.userIsInRole(user, roles, group)
+      return Roles.userIsInRole(user, roles, group);
     }
 
-    return Roles.userIsInRole(user, roles)
+    return Roles.userIsInRole(user, roles);
   }
 }
 
@@ -77,8 +77,12 @@ Roles._uiHelpers = {
 //
 
 if (Roles.debug && console.log) {
-  console.log("[roles] Roles.debug =", Roles.debug)
+  console.log("[roles] Roles.debug =", Roles.debug);
 }
+
+/**
+
+TODO - figure out how to register this helper in Vue instead of Blaze
 
 if ('undefined' !== typeof Package.blaze &&
     'undefined' !== typeof Package.blaze.Blaze &&
@@ -87,6 +91,8 @@ if ('undefined' !== typeof Package.blaze &&
     if (Roles.debug && console.log) {
       console.log("[roles] registering Blaze helper '" + name + "'")
     }
-    Package.blaze.Blaze.registerHelper(name, func) 
+    Package.blaze.Blaze.registerHelper(name, func)
   })
 }
+
+**/

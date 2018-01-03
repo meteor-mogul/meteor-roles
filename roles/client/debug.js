@@ -14,10 +14,10 @@ Roles.debug = false
 
 try {
   if (localStorage) {
-    var temp = localStorage.getItem("Roles.debug")
+    var temp = localStorage.getItem("Roles.debug");
 
     if ('undefined' !== typeof temp) {
-      Roles.debug = !!temp
+      Roles.debug = !!temp;
     }
   }
 } catch (ex) {

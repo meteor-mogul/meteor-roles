@@ -18,5 +18,5 @@
  */
 
 Tracker.autorun(function () {
-  Roles.subscription = Meteor.subscribe("_roles")
+  Roles.subscription = Meteor.subscribe("_roles");
 })

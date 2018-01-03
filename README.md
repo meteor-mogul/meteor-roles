@@ -3,7 +3,11 @@ meteor-roles
 
 Authorization package for Meteor - compatible with built-in accounts package.
 
-<br />
+Forked from [Adrian Lanning's meteor-roles](https://github.com/alanning/meteor-roles).
+
+Goal is to remove dependency on Blaze and re-write examples for VueJs.
+
+## Upstream README
 
 <a id="roles-toc" name="roles-toc"></a>
 ### Table of Contents
